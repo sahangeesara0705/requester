@@ -1,4 +1,8 @@
-# Requester
+<p align="center">
+  <img src="build/icons/128x128.png" alt="Requester icon" width="128" height="128" />
+</p>
+
+<h1 align="center">Requester</h1>
 
 A local-first desktop API client for testing REST and GraphQL APIs. No account or login needed — everything is stored on your machine.
 
