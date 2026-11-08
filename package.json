@@ -1,0 +1,61 @@
+{
+  "name": "requester",
+  "productName": "Requester",
+  "version": "1.0.0",
+  "description": "Requester - a local-first API client for testing REST and GraphQL APIs",
+  "main": "src/main/main.js",
+  "homepage": "https://github.com/requester-app/requester",
+  "author": {
+    "name": "Sahan",
+    "email": "sahangeesaradev11@gmail.com"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux deb AppImage",
+    "dist:deb": "electron-builder --linux deb",
+    "dist:appimage": "electron-builder --linux AppImage"
+  },
+  "build": {
+    "appId": "com.requester.app",
+    "productName": "Requester",
+    "executableName": "requester",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "deb",
+        "AppImage"
+      ],
+      "category": "Development",
+      "icon": "build/icons",
+      "synopsis": "API client for REST and GraphQL",
+      "desktop": {
+        "entry": {
+          "Name": "Requester",
+          "Comment": "Test REST and GraphQL APIs",
+          "Keywords": "api;rest;graphql;http;postman;",
+          "StartupWMClass": "Requester"
+        }
+      },
+      "syncDesktopName": true
+    },
+    "deb": {
+      "maintainer": "Sahan <sahangeesaradev11@gmail.com>",
+      "priority": "optional"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  },
+  "desktopName": "requester.desktop"
+}

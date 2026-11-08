@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; frame-src 'self' data: blob:; connect-src 'none'; object-src 'none'" />
+  <title>Requester</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="../assets/icon.png" alt="" />
+        <span>Requester</span>
+      </div>
+      <div class="topbar-spacer"></div>
+      <label class="env-picker" title="Active environment">
+        <span class="env-dot"></span>
+        <select id="env-select"></select>
+      </label>
+      <button class="btn ghost" id="btn-envs" title="Manage environments">Environments</button>
+      <button class="btn ghost" id="btn-import" title="Import collections (Ctrl+O)">Import</button>
+      <button class="btn ghost" id="btn-export" title="Export everything">Export</button>
+      <button class="btn ghost icon" id="btn-settings" title="Settings">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M19.4 13a7.5 7.5 0 0 0 0-2l2.1-1.6a.5.5 0 0 0 .1-.6l-2-3.5a.5.5 0 0 0-.6-.2l-2.5 1a7.3 7.3 0 0 0-1.7-1l-.4-2.6a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.4l-.4 2.7a7.3 7.3 0 0 0-1.7 1l-2.5-1a.5.5 0 0 0-.6.2l-2 3.5a.5.5 0 0 0 .1.6L4.6 11a7.5 7.5 0 0 0 0 2l-2.1 1.6a.5.5 0 0 0-.1.6l2 3.5c.1.2.4.3.6.2l2.5-1c.5.4 1.1.7 1.7 1l.4 2.6c0 .3.3.5.5.5h4c.3 0 .5-.2.5-.4l.4-2.7c.6-.3 1.2-.6 1.7-1l2.5 1c.2.1.5 0 .6-.2l2-3.5a.5.5 0 0 0-.1-.6L19.4 13ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg>
+      </button>
+    </header>
+
+    <div class="main">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-head">
+          <input id="tree-filter" class="input" type="search" placeholder="Filter requests" spellcheck="false" />
+          <button class="btn icon" id="btn-new-collection" title="New collection (Ctrl+Shift+N)">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>
+          </button>
+        </div>
+        <div class="tree" id="tree"></div>
+      </aside>
+      <div class="resizer col" id="sidebar-resizer"></div>
+
+      <section class="workspace">
+        <div class="tabs" id="tabs"></div>
+        <div class="editor" id="editor"></div>
+      </section>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="menu-root"></div>
+  <div id="toast-root"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
